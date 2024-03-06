@@ -1,0 +1,49 @@
+{
+	"name": "remixjs-monorepo",
+	"version": "1.0.0",
+	"description": "remixjs-monorepo",
+	"main": "index.js",
+	"scripts": {
+		"dev": "npm run lint && pnpm -r run dev",
+		"build": "npm run lint && pnpm -r run build",
+		"start:hello-world": "npm run build && pnpm -F hello-world run start",
+		"changeset": "npm run build && changeset",
+		"version": "changeset version",
+		"release": "changeset publish",
+		"preinstall": "npx only-allow pnpm",
+		"prepare": "husky install",
+		"lint": "eslint --ignore-path .gitignore ./apps"
+	},
+	"lint-staged": {
+		"*.{ts,tsx,js}": [
+			"eslint --config .eslintrc.cjs"
+		],
+		"*.{ts,tsx,js,json,html,yml,css,md}": [
+			"prettier --write"
+		]
+	},
+	"keywords": [],
+	"author": "zsc.guru@gmail.com",
+	"license": "MIT",
+	"engines": {
+		"node": ">=18.0.0",
+		"pnpm": ">=8.0.0"
+	},
+	"devDependencies": {
+		"@changesets/cli": "^2.27.1",
+		"@commitlint/cli": "^18.6.1",
+		"@commitlint/config-conventional": "^18.6.2",
+		"@typescript-eslint/eslint-plugin": "^6.7.4",
+		"eslint": "^8.56.0",
+		"eslint-import-resolver-typescript": "^3.6.1",
+		"eslint-plugin-import": "^2.28.1",
+		"eslint-plugin-jsx-a11y": "^6.7.1",
+		"eslint-plugin-react": "^7.33.2",
+		"eslint-plugin-react-hooks": "^4.6.0",
+		"husky": "^9.0.11",
+		"lint-staged": "^15.2.2",
+		"pm2": "^5.3.1",
+		"prettier": "^3.2.5",
+		"typescript": "^5.3.3"
+	}
+}

@@ -1,0 +1,40 @@
+{
+	"name": "hello-world",
+	"description": "hello-world",
+	"private": false,
+	"sideEffects": false,
+	"type": "module",
+	"scripts": {
+		"build": "remix build",
+		"dev": "remix dev --manual",
+		"lint": "eslint --ignore-path .gitignore .",
+		"start": "remix-serve ./build/index.js",
+		"typecheck": "tsc",
+		"preinstall": "npx only-allow pnpm"
+	},
+	"dependencies": {
+		"@nextui-org/react": "^2.2.9",
+		"@nextui-org/system": "^2.0.15",
+		"@nextui-org/theme": "^2.1.17",
+		"@remix-run/css-bundle": "^2.6.0",
+		"@remix-run/node": "^2.6.0",
+		"@remix-run/react": "^2.6.0",
+		"@remix-run/serve": "^2.6.0",
+		"dayjs": "^1.11.10",
+		"framer-motion": "^11.0.5",
+		"isbot": "^4.1.0",
+		"react": "^18.2.0",
+		"react-dom": "^18.2.0"
+	},
+	"devDependencies": {
+		"@remix-run/dev": "^2.6.0",
+		"@types/react": "^18.2.20",
+		"@types/react-dom": "^18.2.7",
+		"tailwindcss": "^3.4.1",
+		"typescript": "^5.1.6"
+	},
+	"engines": {
+		"node": ">=18.0.0",
+		"pnpm": ">=8.0.0"
+	}
+}
